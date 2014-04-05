@@ -81,7 +81,7 @@ class CurlClient extends AbstractClient
                 }
             }
 
-            if ($requestBody && is_array($requestBody)) {
+            if ($requestBody && is_array($requestBody) && !$multipart) {
                 $requestBody = http_build_query($requestBody, '', '&');
             }
 
